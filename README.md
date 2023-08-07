@@ -17,12 +17,15 @@
 > ICMS (17%) + Imposto de Importação (60%).
   
  
+ 
 ## API
-Usaremos a API Currency Conversion and Exchange Rates para obter a cotaçao do Dólar. ![Ver Documentação](https://rapidapi.com/principalapis/api/currency-conversion-and-exchange-rates)
+Usaremos a API Currency Conversion and Exchange Rates para obter a cotaçao do Dólar. [Ver Documentação](https://rapidapi.com/principalapis/api/currency-conversion-and-exchange-rates)
+
 
 
 ## UTILIZAÇÃO
 O usuário deve digitar o valor da compra em reais e o programa irá converter para dólar, checar se o valor está acima de $50,00, aplicar as regras de taxação e mostrar o preço total da compra.
+
 
 
 
