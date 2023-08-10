@@ -1,0 +1,19 @@
+body {
+	background-color: #111;
+	color:#fff;
+}
+
+#mark {
+	color: yellow;
+}
+
+#container {
+	width: 80%;
+	height: 200px;
+	background: #fff;
+	color: #000;
+}
+
+#ValorCompra {
+	width: 90%;
+}
