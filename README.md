@@ -19,7 +19,7 @@
  
  
 ## API
-Usaremos a API Currency Conversion and Exchange Rates para obter a cotaçao do Dólar. [Ver Documentação](https://rapidapi.com/principalapis/api/currency-conversion-and-exchange-rates)
+Usaremos a API Currency API da Amdoren para obter a cotaçao do Dólar. [Ver Documentação](https://www.amdoren.com/currency-api/)
 
 
 
