@@ -1,15 +1,56 @@
-// Função para obter a taxa de conversão USD para BRL
-// Função para obter a taxa de conversão USD para BRL usando a nova API
-async function getConversionRate() {
-const url = 'https://www.amdoren.com/api/currency.php?api_key=WdMier6wBdiYFjw5cYt9EHzqAhfcns&from=USD&to=BRL';
+// Função para obter a taxa de conversão USD para BRL usando a primeira API
+async function getConversionRateFirstAPI() {
+  const apiKey = 'WdMier6wBdiYFjw5cYt9EHzqAhfcns';
+  const url = `https://www.amdoren.com/api/currency.php?api_key=${apiKey}&from=USD&to=BRL`;
 
   try {
     const response = await fetch(url);
     const data = await response.json();
-    return data.amount;
+    if (data && data.rate) {
+      return data.rate;
+    } else {
+      return null;
+    }
   } catch (error) {
     console.error(error);
     return null;
+  }
+}
+
+// Função para obter a taxa de conversão USD para BRL usando a segunda API
+async function getConversionRateSecondAPI() {
+  const apiKey = 'b1d826a2dc81dfbe0081fa94';
+  const url = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/USD/BRL`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    if (data && data.conversion_rate) {
+      return data.conversion_rate;
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
+// Função para obter a taxa de conversão USD para BRL, tentando a segunda API se a primeira falhar
+async function getConversionRate() {
+  let taxaDeCambio = await getConversionRateFirstAPI();
+  if (taxaDeCambio !== null) {
+    return taxaDeCambio;
+  } else {
+    console.log('Primeira API falhou, tentando a segunda API...');
+    taxaDeCambio = await getConversionRateSecondAPI();
+    if (taxaDeCambio !== null) {
+      console.log('Segunda API bem-sucedida.');
+      return taxaDeCambio;
+    } else {
+      console.log('Ambas as APIs falharam.');
+      return null;
+    }
   }
 }
 
