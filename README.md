@@ -21,6 +21,7 @@
 ## API
 Usaremos a API Currency API da Amdoren para obter a cotaçao do Dólar. [Ver Documentação](https://www.amdoren.com/currency-api/)
 
+Caso a primeira API retorne nulo, será chamada a segunda API, a [exchangerate-api](https://www.exchangerate-api.com/docs/overview) 
 
 
 ## UTILIZAÇÃO
