@@ -1,18 +1,50 @@
+:root {
+  --destaque: #FFA500;
+}
+
 body {
 	background-color: #111;
 	color:#fff;
 }
 
 #mark {
-	color: yellow;
+	color: var(--destaque);
 }
 
-#container {
-	width: 80%;
-	height: 200px;
+strong {
+	color: var(--destaque);
+}
+
+form button {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background: #fff;
+	color: var(--destaque);
+	border-color: var(--destaque);
+	width: 70%;
+}
+
+form button:hover {
+outline: none;
+	box-shadow: 0px 0px 10px var(--destaque);
+	text-shadow: 1px 1px 2px var(--destaque);
+}
+
+#calculadora {
+box-shadow: 0px 0px 20px var(--destaque);
+	width: 90%;
+	height: 300px;
+	margin:auto;
+	margin-bottom: 100px;
 	background: #fff;
 	color: #000;
+	border-radius: 10px;
 }
+
+#calculadora h3 {
+	color: var(--destaque);
+}
+
 
 #ValorCompra {
 	width: 90%;
