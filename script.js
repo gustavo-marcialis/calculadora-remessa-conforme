@@ -6,8 +6,8 @@ async function getConversionRateFirstAPI() {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    if (data && data.rate) {
-      return data.rate;
+    if (data && data.amount) { // Correção: usar data.amount ao invés de data.rate
+      return data.amount; // Correção: retornar data.amount ao invés de data.rate
     } else {
       return null;
     }
@@ -58,6 +58,8 @@ async function getConversionRate() {
 async function calcularValorTotalCompra() {
   const valorCompraInput = document.getElementById('ValorCompra');
   const resultadoElement = document.getElementById('resultado');
+  const icmsElement = document.getElementById('icms');
+  const ipiElement = document.getElementById('ipi');
   const markElement = document.getElementById('mark');
 
   markElement.textContent = 'Aguarde...';
@@ -74,14 +76,22 @@ async function calcularValorTotalCompra() {
   const valorCompra = parseFloat(valorCompraInput.value);
   const valorEmDolar = valorCompra / taxaDeCambio;
   let valorTotal;
+  let icms;
+  let ipi;
 
   if (valorEmDolar > 50) {
-    valorTotal = valorCompra + (0.17 * valorCompra) + (0.60 * valorCompra);
+    icms = valorCompra * 0.17;
+    ipi = valorCompra * 0.60;
+    valorTotal = valorCompra + icms + ipi;
   } else {
-    valorTotal = valorCompra + (0.17 * valorCompra);
+    icms = valorCompra * 0.17;
+    ipi = 0; // Correção: atribuir 0 ao valor do IPI quando valorEmDolar <= 50
+    valorTotal = valorCompra + icms;
   }
 
   resultadoElement.textContent = `O valor total da compra é de R$ ${valorTotal.toFixed(2)}.`;
+  icmsElement.textContent = `Valor do ICMS: R$ ${icms.toFixed(2)}.`;
+  ipiElement.textContent = `Valor do IPI: R$ ${ipi.toFixed(2)}.`;
 }
 
 // Chama a função para calcular o valor total da compra com impostos quando o formulário for enviado
