@@ -1,12 +1,36 @@
+// fala aí gustavo, beleza?
+// adicionei jquery no teu projeto, espero que não se importe
+// qualquer coisa pode me chamar no twitter: @ducaswtf
+
+$(document).ready(function () {
+  $("#mark").text("carregando..."); // mostra uma mensagem enquanto a request está carregando
+
+  getConversionRateFirstAPI()
+    .then((amount) => {
+      if (!amount) {
+        document.getElementById("dolar-wrapper").hidden = true;
+        document.getElementById("dolar-error-wrapper").hidden = false;
+      }
+
+      $("#mark").text(amount || "Failed to fetch data");
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+});
+
 // Função para obter a taxa de conversão USD para BRL usando a primeira API
 async function getConversionRateFirstAPI() {
-  const apiKey = 'WdMier6wBdiYFjw5cYt9EHzqAhfcns';
+  const apiKey = "WdMier6wBdiYFjw5cYt9EHzqAhfcns";
   const url = `https://www.amdoren.com/api/currency.php?api_key=${apiKey}&from=USD&to=BRL`;
 
   try {
     const response = await fetch(url);
     const data = await response.json();
-    if (data && data.amount) { // Correção: usar data.amount ao invés de data.rate
+
+    if (data && data.amount) {
+      // Correção: usar data.amount ao invés de data.rate
+
       return data.amount; // Correção: retornar data.amount ao invés de data.rate
     } else {
       return null;
@@ -19,7 +43,7 @@ async function getConversionRateFirstAPI() {
 
 // Função para obter a taxa de conversão USD para BRL usando a segunda API
 async function getConversionRateSecondAPI() {
-  const apiKey = 'b1d826a2dc81dfbe0081fa94';
+  const apiKey = "b1d826a2dc81dfbe0081fa94";
   const url = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/USD/BRL`;
 
   try {
@@ -42,13 +66,13 @@ async function getConversionRate() {
   if (taxaDeCambio !== null) {
     return taxaDeCambio;
   } else {
-    console.log('Primeira API falhou, tentando a segunda API...');
+    console.log("Primeira API falhou, tentando a segunda API...");
     taxaDeCambio = await getConversionRateSecondAPI();
     if (taxaDeCambio !== null) {
-      console.log('Segunda API bem-sucedida.');
+      console.log("Segunda API bem-sucedida.");
       return taxaDeCambio;
     } else {
-      console.log('Ambas as APIs falharam.');
+      console.log("Ambas as APIs falharam.");
       return null;
     }
   }
@@ -56,20 +80,20 @@ async function getConversionRate() {
 
 // Função para calcular o valor total da compra com impostos
 async function calcularValorTotalCompra() {
-  const valorCompraInput = document.getElementById('ValorCompra');
-  const resultadoElement = document.getElementById('resultado');
-  const icmsElement = document.getElementById('icms');
-  const ipiElement = document.getElementById('ipi');
-  const markElement = document.getElementById('mark');
+  const valorCompraInput = document.getElementById("ValorCompra");
+  const resultadoElement = document.getElementById("resultado");
+  const icmsElement = document.getElementById("icms");
+  const ipiElement = document.getElementById("ipi");
+  const markElement = document.getElementById("mark");
 
-  markElement.textContent = 'Aguarde...';
+  markElement.textContent = "Aguarde...";
 
   const taxaDeCambio = await getConversionRate();
 
   if (taxaDeCambio !== null) {
     markElement.textContent = `R$ ${taxaDeCambio.toFixed(2)}`;
   } else {
-    markElement.textContent = 'Não foi possível obter a taxa de câmbio.';
+    markElement.textContent = "Não foi possível obter a taxa de câmbio.";
     return;
   }
 
@@ -81,7 +105,7 @@ async function calcularValorTotalCompra() {
 
   if (valorEmDolar > 50) {
     icms = valorCompra * 0.17;
-    ipi = valorCompra * 0.60;
+    ipi = valorCompra * 0.6;
     valorTotal = valorCompra + icms + ipi;
   } else {
     icms = valorCompra * 0.17;
@@ -89,28 +113,30 @@ async function calcularValorTotalCompra() {
     valorTotal = valorCompra + icms;
   }
 
-  resultadoElement.textContent = `O valor total da compra é de R$ ${valorTotal.toFixed(2)}.`;
+  resultadoElement.textContent = `O valor total da compra é de R$ ${valorTotal.toFixed(
+    2
+  )}.`;
   icmsElement.textContent = `Valor do ICMS: R$ ${icms.toFixed(2)}.`;
   ipiElement.textContent = `Valor do IPI: R$ ${ipi.toFixed(2)}.`;
 }
 
 // Chama a função para calcular o valor total da compra com impostos quando o formulário for enviado
-const formulario = document.getElementById('formulario');
-formulario.addEventListener('submit', function(event) {
+const formulario = document.getElementById("formulario");
+formulario.addEventListener("submit", function (event) {
   event.preventDefault(); // Impede o envio do formulário tradicional
   calcularValorTotalCompra();
 });
 
 // Atualiza o valor do dólar quando a página é carregada
-window.onload = async function() {
-  const markElement = document.getElementById('mark');
-  markElement.textContent = 'Aguarde...';
+window.onload = async function () {
+  const markElement = document.getElementById("mark");
+  markElement.textContent = "Aguarde...";
 
   const taxaDeCambio = await getConversionRate();
 
   if (taxaDeCambio !== null) {
     markElement.textContent = `R$ ${taxaDeCambio.toFixed(2)}`;
   } else {
-    markElement.textContent = 'Não foi possível obter a taxa de câmbio.';
+    markElement.textContent = "Não foi possível obter a taxa de câmbio.";
   }
 };
