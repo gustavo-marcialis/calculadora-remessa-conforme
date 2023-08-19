@@ -11,6 +11,7 @@ footer {
   border-top: 1px rgb(45, 45, 45) solid;
   margin-top: 2rem;
   padding: 1rem;
+  background: #333;
 }
 
 footer a {
@@ -23,28 +24,12 @@ footer a:hover {
 }
 
 header {
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   border-bottom: 1px rgb(45, 45, 45) solid;
   margin-bottom: 2rem;
-}
-
-header .dolar-wrapper {
-  padding: 0.3rem 1rem;
-  background: #232323;
-  border-radius: 8px;
-  font-weight: bolder;
-  margin-left: 1rem;
-}
-
-header .dolar-error-wrapper {
-  padding: 0.3rem 1rem;
-  background: rgb(249, 48, 48);
-  border-radius: 8px;
-  font-weight: bolder;
-  margin-left: 1rem;
+  background: #333;
 }
 
 header a {
@@ -54,6 +39,10 @@ header a {
 
 header a:hover {
   color: #ffa500;
+}
+
+header p {
+  margin-left: auto;
 }
 
 #mark {
