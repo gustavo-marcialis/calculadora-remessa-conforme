@@ -96,13 +96,13 @@ async function calcularValorTotalCompra() {
 
 // Chama a função para calcular o valor total da compra com impostos quando o formulário for enviado
 const formulario = document.getElementById('formulario');
-formulario.addEventListener('submit', function(event) {
+formulario.addEventListener('submit', function (event) {
   event.preventDefault(); // Impede o envio do formulário tradicional
   calcularValorTotalCompra();
 });
 
 // Atualiza o valor do dólar quando a página é carregada
-window.onload = async function() {
+window.onload = async function () {
   const markElement = document.getElementById('mark');
   markElement.textContent = 'Aguarde...';
 

@@ -1,0 +1,81 @@
+:root {
+  --amarelo: #F7941D;
+  --verde: #279B48;
+}
+
+body {
+  background-color: #111;
+  color: #fff;
+}
+
+footer {
+  border-top: 1px rgb(45, 45, 45) solid;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #333;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+footer a:hover {
+  color: white;
+}
+
+#formulario {
+  border: solid 2px var(--verde);
+}
+
+#formulario button {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  border: 1px solid var(--verde);
+  color: var(--verde);
+  width: 200px;
+}
+
+#formulario button:hover {
+  background: var(--verde);
+  color: #fff;
+}
+
+#formulario label {
+  font-size: larger;
+}
+
+header {
+  padding: 1rem 1rem;
+  display: flex;
+  border-bottom: 1px rgb(45, 45, 45) solid;
+  margin-bottom: 2rem;
+  background: #333;
+  margin: auto;
+}
+
+header a {
+  color: white;
+  font-weight: bold;
+}
+
+header a:hover {
+  color: #ffa500;
+}
+
+header p {
+  margin: auto;
+}
+
+#mark {
+  color: var(--verde);
+}
+
+.resultado {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+strong {
+  color: var(--amarelo);
+}
