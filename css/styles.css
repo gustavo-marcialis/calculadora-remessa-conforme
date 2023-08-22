@@ -159,6 +159,14 @@
   color: white;
 }
 
+#nav {
+  background: #333;
+}
+
+#header {
+  background: #000;
+}
+
 
 body {
   margin: 0;
