@@ -19,33 +19,32 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container px-5">
                     <a class="navbar-brand" href="index.html"><img src="assets/logo.png" alt="logo" width="250px"></a>
-                    <h5 class="text-white">Dólar <span id="mark" class="te"></span></h5>
+                    <h5 class="text-white">Dólar <span id="mark" class="text-primary"></span></h5>
                 </div>
             </nav>
             <!-- Header-->
             <header class="bg-dark py-5">
                 <div class="container px-5">
-                    <div class="row gx-5 align-items-center justify-content-center">
-                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-md-8">
                             <div class="my-5 text-center text-xl-start">
                                 <h1 class=" fw-bolder text-white mb-2">Calcule o Valor Total das Suas Compras Internacionais!</h1>
                                 <p class="lead fw-normal text-white-50 mb-4">A Receita Federal lançou o Programa Remessa Conforme, que mudou as regras de taxação de compras internacionais.</p>
                                 <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features"><i class="bi bi-info-circle-fill"></i>Saiba Mais</a>
                             </div>
                         </div>
-                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+                        <div class="col-md-4 text-center">
+                            <h1 class=" fw-bolder text-white mb-2" id="calcular">Calcule Agora</h1>
                             <form id="formulario">
-                                <h1 class=" fw-bolder text-white mb-2">Calcule Agora</h1>
                                 <label for="ValorCompra">Valor da Compra:</label><br>
                                 <input id="ValorCompra" type="number" placeholder="Separe centavos com " .""><br>
                                 <button type="submit" class="btn btn-primary btn-lg px-4 me-sm-3">Calcular</button>
-                            </form>
-
-                            <p id="mark"></p>
-
-                            <p id="resultado" class="resultado"></p>
+                                <p id="resultado" class="resultado"></p>
                             <p id="icms" class="resultado"></p>
                             <p id="ipi" class="resultado"></p>
+                            </form>
+
+                            
                         </div>
                     </div>
                 </div>
@@ -55,16 +54,16 @@
                 <div class="container px-5 my-5">
                     <h2 class="fw-bolder mb-0">Novas Regras de Taxação</h2><br>
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-cash-coin"></i></div>
-                        <h2 class="h5">Compras Até US$ 50 Dólares</h2>
-                        <p class="mb-0">Compras de até US$ 50 Dólares serão ISENTAS de IPI (Imposto de Importação), pagando apenas 17% de ICMS, taxa que será cobrada no ato da compra, sem cobranças extras após a finalização ou entrega do pedido.</p>
+                        <h2>Compras Até US$ 50 Dólares</h2>
+                        <p class="mb-0">Compras de até US$ 50 Dólares serão ISENTAS de IPI (Imposto de Importação), pagando apenas 17% de ICMS, taxa que será cobrada no ato da compra, <strong>sem cobranças extras</strong> após a finalização ou entrega do pedido.</p>
                         <br>
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-cash-coin"></i></div>
-                        <h2 class="h5">Compras Até US$ 50 Dólares</h2>
-                        <p class="mb-0">Compras de até US$ 50 Dólares serão ISENTAS de IPI (Imposto de Importação), pagando apenas 17% de ICMS, taxa que será cobrada no ato da compra, sem cobranças extras após a finalização ou entrega do pedido.</p>
+                        <h2>Compras Acima de US$ 50 Dólares</h2>
+                        <p class="mb-0">Compras que ultrapassarem o valor de US$ 50 Dólares pagarão 60% de IPI + 17% de ICMS. Ambas as taxas serão cobradas <strong>no ato da compra</strong>, sem cobranças extras após a finalização ou entrega do pedido.</p>
                         <br>
                     <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-info-circle-fill"></i></div>
-                        <h2 class="h5">Atenção!</h2>
-                        <p class="mb-0">As novas regras são válidas APENAS para as lojas cadastradas no programa. A adesão é VOLUNTÁRIA, então cada empresa decide se vai aderir ou não.</p>
+                    <h2 class="text-danger">Atenção!</h2>
+                    <p class="mb-0">As novas regras são válidas APENAS para as lojas cadastradas no programa. A adesão é VOLUNTÁRIA, então cada empresa decide se vai aderir ou não.</p>
                 </div>
             </section>
         </main>
