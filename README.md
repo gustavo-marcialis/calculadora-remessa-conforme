@@ -1,9 +1,43 @@
-# Calculador Remessa Conforme
+# Calculadora Remessa Conforme
   
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
   
   
-> Calcule a taxação de compras internacionais de acordo com as novas regras do Programa Remessa Conforme.
+  ## Problema Resolvido
+  
+> Cálculo do valor de compras internacionais e taxas cobradas de acordo com as novas regras do Programa Remessa Conforme.
+  
+  
+  ## Resolução
+  
+> Um site para explicar as novas regras de taxação e fazer o cálculo do valor total de compras internacionais com a tributação.
+  
+  
+  ## Benefícios
+  
+- Conhecimento das novas regras de taxação
+- Visualização do valor total de compras com as novas regras
+- Visualização dos valores dos tributos cobrados
+  
+  
+  ## Tecnologias Utilizadas
+  
+  - HTML 5
+  - CSS 3
+  - Bootstrap
+  - JavaScript
+  - API
+
+
+## Habilidades Exercitadas
+
+- Tags Semãnticas do HTML
+- CSS Grid
+- JavaScript DOM
+- Consumo de API
+- Classes Bootstrap
+- Lógica de Programação
+
 
 ## Regras do Programa
 
@@ -24,15 +58,10 @@ Usaremos a API Currency API da Amdoren para obter a cotaçao do Dólar. [Ver Doc
 Caso a primeira API retorne nulo, será chamada a segunda API, a [exchangerate-api](https://www.exchangerate-api.com/docs/overview) 
 
 
-## UTILIZAÇÃO
-O usuário deve digitar o valor da compra em reais e o programa irá converter para dólar, checar se o valor está acima de $50,00, aplicar as regras de taxação e mostrar o preço total da compra.
 
+ ## 📫 Contribuindo para a Calculadora Remessa Conforme
 
-
-
- ## 📫 Projeto Open Source. Contribua:
-
- Para contribuir com o projeto, siga estas etapas: 
+ Para contribuir com a Calculadora Remessa Conforme, siga estas etapas: 
   
  1. Bifurque este repositório. 
  2. Crie um branch: `git checkout -b <nome_branch>`. 
