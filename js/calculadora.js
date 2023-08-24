@@ -82,7 +82,7 @@ async function calcularValorTotalCompra() {
   if (valorEmDolar > 50) {
     icms = valorCompra * 0.17;
     ipi = valorCompra * 0.60;
-    valorTotal = valorCompra + icms + ipi;
+    valorTotal = (valorCompra + icms) + ipi;
   } else {
     icms = valorCompra * 0.17;
     ipi = 0; // Correção: atribuir 0 ao valor do IPI quando valorEmDolar <= 50
