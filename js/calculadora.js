@@ -86,7 +86,7 @@ async function calcularValorTotalCompra() {
     //valorTotal += ipi;
     ipi = valorCompra * 1.60;
 icms = (ipi /0,83)-valorCompra;    
-valorTotal = icms+valorCompra;
+valorTotal = icms+ipi;
         console.log('valorCompra='+valorCompra+' ipi='+ipi+' icms='+icms+' valorTotal='+valorTotal);
   } else {
     //icms = valorCompra * 0.17;
