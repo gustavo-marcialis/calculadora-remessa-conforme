@@ -87,12 +87,14 @@ async function calcularValorTotalCompra() {
     ipi = valorCompra * 1.60;
 icms = (ipi /0,83)-valorCompra;    
 valorTotal = icms+valorCompra;
+        console.log('valorCompra='+valorCompra+' ipi='+ipi+' icms='+icms+' valorTotal='+valorTotal);
   } else {
     //icms = valorCompra * 0.17;
     ipi = 0; // Correção: atribuir 0 ao valor do IPI quando valorEmDolar <= 50
     //valorTotal = valorCompra + icms;
     icms = (valorCompra / 0.83)-valorCompra;
 valorTotal =  icms+valorCompra;
+        console.log('valorCompra='+valorCompra+' ipi='+ipi+' icms='+icms+' valorTotal='+valorTotal);
   }
 
   resultadoElement.textContent = `O valor total da compra é de R$ ${valorTotal.toFixed(2)}.`;
