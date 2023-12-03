@@ -59,7 +59,7 @@ async function calcularValorTotalCompra() {
   const valorCompraInput = document.getElementById('ValorCompra');
   const resultadoElement = document.getElementById('resultado');
   const icmsElement = document.getElementById('icms');
-  const ipiElement = document.getElementById('ipi');
+  const iiElement = document.getElementById('ii');
   const markElement = document.getElementById('mark');
 
   markElement.textContent = 'Aguarde...';
@@ -77,29 +77,29 @@ async function calcularValorTotalCompra() {
   const valorEmDolar = valorCompra / taxaDeCambio;
   let valorTotal;
   let icms;
-  let ipi;
+  let ii;
 
   if (valorEmDolar > 50) {
     //icms = valorCompra * 0.17;
     //valorTotal = valorCompra + icms;
     //ipi = valorTotal * 0.60;
     //valorTotal += ipi;
-    ipi = valorCompra * 1.60;
-icms = (ipi /0.83)-ipi;    
-valorTotal = icms+ipi;
-        console.log('valorCompra='+valorCompra+' ipi='+ipi+' icms='+icms+' valorTotal='+valorTotal);
+    ii = valorCompra *0.60;
+icms = (ii /0.83)-ii;    
+valorTotal = valorCompra+icms+ii;
+        console.log('valorCompra='+valorCompra+' II='+ii+' icms='+icms+' valorTotal='+valorTotal);
   } else {
     //icms = valorCompra * 0.17;
-    ipi = 0; // Correção: atribuir 0 ao valor do IPI quando valorEmDolar <= 50
+    ii = 0; // Correção: atribuir 0 ao valor do IPI quando valorEmDolar <= 50
     //valorTotal = valorCompra + icms;
     icms = (valorCompra / 0.83)-valorCompra;
 valorTotal =  icms+valorCompra;
-        console.log('valorCompra='+valorCompra+' ipi='+ipi+' icms='+icms+' valorTotal='+valorTotal);
+        console.log('valorCompra='+valorCompra+' II='+ii+' icms='+icms+' valorTotal='+valorTotal);
   }
 
   resultadoElement.textContent = `O valor total da compra é de R$ ${valorTotal.toFixed(2)}.`;
   icmsElement.textContent = `Valor do ICMS: R$ ${icms.toFixed(2)}.`;
-  ipiElement.textContent = `Valor do IPI: R$ ${ipi.toFixed(2)}.`;
+  iiElement.textContent = `Valor do II: R$ ${ii.toFixed(2)}.`;
 }
 
 // Chama a função para calcular o valor total da compra com impostos quando o formulário for enviado
